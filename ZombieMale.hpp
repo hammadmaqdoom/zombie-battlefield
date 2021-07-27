@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include "Zombie.hpp"
 #include<list>
 
 class ZombieMale: public Zombie{
@@ -10,4 +11,5 @@ class ZombieMale: public Zombie{
     void attack();
     void dead();
     void walk();
-    void draw();
+    void draw(SDL_Rect mover);
+};

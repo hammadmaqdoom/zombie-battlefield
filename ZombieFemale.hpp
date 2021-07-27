@@ -11,4 +11,5 @@ class ZombieFemale: public Zombie{
     void attack();
     void dead();
     void walk();
-    void draw();
+    void draw(SDL_Rect mover);
+};
