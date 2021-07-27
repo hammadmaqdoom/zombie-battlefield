@@ -5,6 +5,7 @@ BattleField::BattleField(SDL_Renderer *renderer, SDL_Texture *asst):gRenderer(re
 
 void BattleField::drawObjects(){
     // call draw functions of all the objects here
+    // Game
     
     for(Tank& t: tanks) {
             t.create();
