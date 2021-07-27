@@ -1,0 +1,28 @@
+#include "Tank.hpp"
+
+
+Tank::Tank(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): renderer(rend), assets(ast), mover(mov), tB(rend, ast, mov), tT(rend, ast, mov){};
+
+void Tank::create(){
+    tB.draw(mover);
+    tT.draw(mover);
+    // mover.x+=2;
+}
+
+
+void Tank::fire(bool status){
+        tT.fire(status);
+}
+
+SDL_Rect Tank::moverr(){
+    return mover;
+}
+
+// blast
+// 39, 394, 92, 165
+// 189, 373, 133, 165
+// 339, 362, 162, 165
+// 506, 362, 162, 165
+// 681, 362, 154, 165
+// 847, 362, 154, 165
+// 1010, 362, 158, 165
