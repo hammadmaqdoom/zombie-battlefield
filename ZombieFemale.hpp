@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include "Zombie.hpp"
 #include<list>
 
 class ZombieFemale: public Zombie{

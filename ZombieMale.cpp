@@ -5,5 +5,5 @@ ZombieMale::ZombieMale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zomb
 }
 
 void ZombieMale::draw(SDL_Rect mover){
-    //Unit::draw(src, mover);
+    Unit::draw(src, mover);
 }

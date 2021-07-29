@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include "Zombie.hpp"
+#include "Unit.hpp"
 #include<list>
 
 class ZombieMale: public Zombie{

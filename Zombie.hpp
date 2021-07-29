@@ -7,6 +7,8 @@ class Zombie: public Unit{
     SDL_Rect src, mover;
     SDL_Renderer *renderer;
     SDL_Texture *assets;
+    
+    protected:
     int health;
     int size;
     
