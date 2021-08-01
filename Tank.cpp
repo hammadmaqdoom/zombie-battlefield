@@ -1,14 +1,23 @@
 #include "Tank.hpp"
 
 
-Tank::Tank(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): renderer(rend), assets(ast), mover(mov), tB(rend, ast, mov), tT(rend, ast, mov){};
+Tank::Tank(tankBody tB, tankTurret tT): tB(tB), tT(tT){};
 
-void Tank::create(){
-    tB.draw(mover);
-    tT.draw(mover);
+void Tank::draw(){
+    tB.draw();
+    tT.draw();
     // mover.x+=2;
 }
+tankturret Tank::returnTankturret()
+{
+    return tT;
+}
 
+int Tank::returnY()
+{
+    return tT.returnY();
+}
+Tank::Tank(){}
 
 void Tank::fire(bool status){
         tT.fire(status);

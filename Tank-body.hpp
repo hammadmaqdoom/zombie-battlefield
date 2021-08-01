@@ -5,9 +5,10 @@
 class tankBody: public Unit{
     SDL_Rect src, mover;
     public:
+    tankBody();
     tankBody(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
 
-    void draw(SDL_Rect mover);
+    void draw();
     
 };
 

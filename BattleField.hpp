@@ -21,5 +21,8 @@ class BattleField{
     void createObject(int, int);
     void fire();
     void wiggleAnimation();
-    // void tank();
+    void Onefire(int, int );
+    void DisplayTanks();//displays tanks from
+    //the beginning
+    
 };

@@ -158,7 +158,7 @@ void Game::run( )
 			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
-				BattleField.createObject(xMouse, yMouse);
+				BattleField.Onefire(xMouse, yMouse);
 				Mix_PlayMusic( tankSpawnMusic, 2 );
 			}
 

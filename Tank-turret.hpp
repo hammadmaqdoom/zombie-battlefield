@@ -9,12 +9,16 @@ class tankTurret: public Unit{
     SDL_Rect src, mover;
     int posX, posY;
     public:
+    tankTurret();
     tankTurret(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
 
-    void draw(SDL_Rect mover);
+    void draw();
     // SDL_Rect getMover();
 
     void fire(bool status);
+
+    int returnY();
+    int returnX();
     
 };
 

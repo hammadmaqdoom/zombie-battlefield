@@ -9,18 +9,22 @@
 using namespace std;
 
 class Tank{
-    SDL_Renderer* renderer;
-    SDL_Texture* assets;
+    // SDL_Renderer* renderer;
+    // SDL_Texture* assets;
     SDL_Rect src, mover;
+
     // std::list<Bullet> bllts;
 
     tankBody tB;
     tankTurret tT;  
 
     public:
-    Tank(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
-    void create();
+    Tank();
+    Tank(tankBody tb, tankTurret tT);
+    void draw();
     SDL_Rect moverr();
     void fire(bool status);
+    Tankturret returnTankturret();
+    int returnY();
     
 };
