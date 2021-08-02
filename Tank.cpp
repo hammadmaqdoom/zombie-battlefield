@@ -8,7 +8,7 @@ void Tank::draw(){
     tT.draw();
     // mover.x+=2;
 }
-tankturret Tank::returnTankturret()
+tankTurret Tank::returnTankturret()
 {
     return tT;
 }

@@ -183,7 +183,7 @@ void Game::run( )
 		SDL_RenderClear(gRenderer); //removes everything from renderer
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
-
+		BattleField.DisplayTanks();
 		BattleField.drawObjects();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
