@@ -24,7 +24,7 @@ class Tank{
     void draw();
     SDL_Rect moverr();
     void fire(bool status);
-    Tankturret returnTankturret();
+    tankTurret returnTankturret();
     int returnY();
     
 };

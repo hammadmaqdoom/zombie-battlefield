@@ -20,3 +20,11 @@ void Bullet::draw(){
     
     
 }
+
+bool Bullet::isTrue()
+{
+    if (mover.x == 960)
+        return true;
+    else
+        return false;
+}

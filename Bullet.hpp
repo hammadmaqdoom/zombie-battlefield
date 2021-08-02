@@ -11,5 +11,6 @@ class Bullet: public Unit{
     Bullet(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
 
     void draw();
+    bool isTrue();
     
 };
