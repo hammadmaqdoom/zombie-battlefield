@@ -133,10 +133,8 @@ void BattleField::Onefire(int x, int y)
         }
     }
     //only the tank that the user click on fires bullet
-
     delete tankptr;
 }
-
 void BattleField::wiggleAnimation()
 {
     for (Tank &t : tanks)
