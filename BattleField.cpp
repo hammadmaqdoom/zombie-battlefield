@@ -124,12 +124,7 @@ void BattleField::Onefire(int x, int y)
     }
     //only the tank that the user click on fires bullet
 
-<<<<<<< HEAD
-=======
-    //creating bullet from end of turret
-    // Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6}); //where 240 is the width of turret
-    // bullets.push_back(b1);
->>>>>>> 859207dd67469ee62db54882d858d11df68604fd
+    
     delete tankptr;
 }
 
