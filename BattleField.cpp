@@ -52,14 +52,15 @@ void BattleField::DisplayTanks()
     }
 }
 
-void BattleField::drawZombies(){
-    int x = 900;
+void BattleField::drawZombies(){ //draws zombies on the right most 
+    int x = 960;
     int y = 57;
     for (int i = 0; i < 6; i++)
     {
-        ZombieChild zC(gRenderer, assets, {x, y, 60, 24});
+        ZombieChild zC(gRenderer, assets, {x, y, 40, 80});
         zChild.push_back(zC);
         y += 50 + 46;
+
     }
 }
 
