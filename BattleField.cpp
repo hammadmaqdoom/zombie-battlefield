@@ -23,6 +23,10 @@ void BattleField::drawObjects()
     }
     booms.clear();
 
+    for (Zombie &z : zombies){
+        z.draw();
+    }
+
     wiggleAnimation();
 }
 void BattleField::DisplayTanks()
@@ -38,6 +42,18 @@ void BattleField::DisplayTanks()
         y += 50 + 46;
     }
 }
+
+void BattleField::drawZombies(){
+    int x = 900;
+    int y = 37;
+    for (int i = 0; i < 6; i++)
+    {
+        Zombie zm(gRenderer, assets, {x, y, 120, 46});
+        zombies.push_back(zm);
+        y += 50 + 46;
+    }
+}
+
 void BattleField::createObject(int x, int y)
 {
     tankBody tb1(gRenderer, assets, {x, y, 240, 75});
@@ -91,7 +107,7 @@ void BattleField::Onefire(int x, int y)
             std::cout<<"Turret: "<<xc<<" , "<<yc<<std::endl;
 
             //creating bullet from end of turret
-            Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6.25}); //where 120 is the width of turret
+            Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6}); //where 120 is the width of turret
             bullets.push_back(b1);
 
             //Boom animation
@@ -108,6 +124,12 @@ void BattleField::Onefire(int x, int y)
     }
     //only the tank that the user click on fires bullet
 
+<<<<<<< HEAD
+=======
+    //creating bullet from end of turret
+    // Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6}); //where 240 is the width of turret
+    // bullets.push_back(b1);
+>>>>>>> 859207dd67469ee62db54882d858d11df68604fd
     delete tankptr;
 }
 

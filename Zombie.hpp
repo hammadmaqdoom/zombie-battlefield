@@ -14,7 +14,7 @@ class Zombie: public Unit{
     
     public:
     Zombie(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
-    void draw(SDL_Rect mover);
-    std::list<Zombie> zombie;
+    void draw();
+    // std::list<Zombie> zombie;
 
 };

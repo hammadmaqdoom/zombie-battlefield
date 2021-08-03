@@ -4,11 +4,13 @@
 #include "Tank.hpp"
 #include "Unit.hpp"
 #include "Boom.hpp"
+#include "Zombie.hpp"
 #include<list>
 using namespace std;
 class BattleField{
     list<Bullet> bullets;
     list<Tank> tanks;
+    list<Zombie> zombies; 
     list<Boom> booms;
     SDL_Rect movr;
 
@@ -22,7 +24,7 @@ class BattleField{
     void fire();
     void wiggleAnimation();
     void Onefire(int, int );
-    void DisplayTanks();//displays tanks from
-    //the beginning
+    void DisplayTanks();//displays tanks from the beginning
+    void drawZombies();
     
 };
