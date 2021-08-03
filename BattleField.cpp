@@ -134,6 +134,10 @@ void BattleField::Onefire(int x, int y)
     }
     //only the tank that the user click on fires bullet
 
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 3f3962b760525007ee066df3d0ea41f63c22d8bb
     delete tankptr;
 }
 
