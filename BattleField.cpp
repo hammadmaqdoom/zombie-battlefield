@@ -35,7 +35,7 @@ void BattleField::DisplayTanks()
         tankTurret tt(gRenderer, assets, {x + 30, y, 120, 46});
         Tank tank(tb, tt);
         tanks.push_back(tank);
-        y += 50+46;
+        y += 50 + 46;
     }
 }
 void BattleField::createObject(int x, int y)
@@ -45,7 +45,6 @@ void BattleField::createObject(int x, int y)
     Tank tank(tb1, tt1);
     tanks.push_back(tank);
     std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
-
 }
 
 void BattleField::fire()
@@ -61,37 +60,60 @@ void BattleField::fire()
         int y = tt.returnY();
 
         //creating bullet from end of turret
+<<<<<<< HEAD
         Bullet b1(gRenderer, assets, {x + 120, y+20, 20, 6}); //where 120 is the width of turret
+=======
+        Bullet b1(gRenderer, assets, {x + 120, y + 20, 20, 6.25}); //where 120 is the width of turret
+>>>>>>> 7708f51d12edebb9e891ff8c4011f013408ffe28
         bullets.push_back(b1);
 
         t.fire(true);
-        
-        Boom bm1(gRenderer, assets, {x + 120, y + 20, 20, 12});
-        
-        booms.push_back(bm1);
-        std::cout << "Bullet fired from tank at: " << movr.x << " -- " << movr.y << std::endl;
-    }
 
+        Boom bm1(gRenderer, assets, {x + 120, y + 20, 20, 12});
+
+        booms.push_back(bm1);
+        std::cout << "Bullet fired from tank at: " << x + 120 << " -- " << y + 20 << std::endl;
+    }
 }
 
 void BattleField::Onefire(int x, int y)
 {
-    Tank* tankptr = new Tank;
+    Tank *tankptr = new Tank;
     for (Tank &t : tanks)
     {
-        if (x<=120 && (y<=(t.returnY()+46)&&y>t.returnY()))
-        tankptr = &t;
+        if (x <= 120 && (y > t.returnY() && y < (t.returnY() + 46)))
+        {
+            tankptr = &t;
+            std::cout << "Mouse clicked at: " << x << " , " << y << std::endl;
+            std::cout << "Tank at: " << t.returnX() << " , " << t.returnY() << std::endl;
+            tankTurret tt = tankptr->returnTankturret();
+
+            //Turret's xy corrdinates
+            int xc = tt.returnX();
+            int yc = tt.returnY();
+
+            std::cout<<"Turret: "<<xc<<" , "<<yc<<std::endl;
+
+            //creating bullet from end of turret
+            Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6.25}); //where 120 is the width of turret
+            bullets.push_back(b1);
+
+            //Boom animation
+            t.fire(true);
+
+            Boom bm1(gRenderer, assets, {xc + 120, yc + 23, 20, 12});
+
+            booms.push_back(bm1);
+        }
     }
     //only the tank that the user click on fires bullet
-    tankTurret tt = tankptr->returnTankturret();
 
-    //Turret's xy corrdinates
-    int xc = tt.returnX();
-    int yc = tt.returnY();
-
+<<<<<<< HEAD
     //creating bullet from end of turret
     Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6}); //where 240 is the width of turret
     bullets.push_back(b1);
+=======
+>>>>>>> 7708f51d12edebb9e891ff8c4011f013408ffe28
     delete tankptr;
 }
 
