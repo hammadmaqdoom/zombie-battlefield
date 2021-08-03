@@ -5,7 +5,7 @@ ZombieChild::ZombieChild(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zo
 }
 void ZombieChild::draw(){
     Zombie::draw(src, mover);
-    // mover.x -= speed;
+    mover.x -= speed;
 }
 
 void ZombieChild::dead(){
@@ -17,6 +17,7 @@ void ZombieChild::attack(){
 }
 
 void ZombieChild::walk(){
+    
     
 }
 

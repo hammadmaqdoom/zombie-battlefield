@@ -12,6 +12,7 @@
 #include<list>
 using namespace std;
 class BattleField{
+    
     list<Bullet> bullets;
     list<Tank> tanks;
     list<ZombieChild> zChild; 
