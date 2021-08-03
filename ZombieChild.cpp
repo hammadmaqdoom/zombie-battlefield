@@ -15,7 +15,7 @@ void ZombieChild::attack(){
     src = {249, 904, 156, 225}; //Attack
 }
 
-void ZombieChild::walk(){
+void ZombieChild::walkChild(){
     
 }
 

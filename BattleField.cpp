@@ -45,10 +45,10 @@ void BattleField::DisplayTanks()
 
 void BattleField::drawZombies(){
     int x = 900;
-    int y = 37;
+    int y = 57;
     for (int i = 0; i < 6; i++)
     {
-        Zombie zm(gRenderer, assets, {x, y, 120, 46});
+        Zombie zm(gRenderer, assets, {x, y, 60, 24});
         zombies.push_back(zm);
         y += 50 + 46;
     }
@@ -124,7 +124,10 @@ void BattleField::Onefire(int x, int y)
     }
     //only the tank that the user click on fires bullet
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 4f539e927881fd548fdca8385180d399f0c8e3df
     delete tankptr;
 }
 

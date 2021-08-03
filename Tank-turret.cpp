@@ -15,7 +15,7 @@ void tankTurret::fire(bool status){
             std::cout << "Wiggle True!"<< endl;
         } else if (status == false) {
             src = {603, 0, 507, 152};
-            std::cout << "Wiggle False!" << endl;
+            // std::cout << "Wiggle False!" << endl;
         }
     }
 

@@ -10,6 +10,6 @@ class ZombieChild: public Zombie{
     std::list<ZombieChild> zombiechild; // cut and paste in battlefield
     void attack();
     void dead();
-    void walk();
+    void walkChild();
     void draw(SDL_Rect mover);
 };

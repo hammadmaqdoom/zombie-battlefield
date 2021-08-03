@@ -1,7 +1,7 @@
 #include "ZombieMale.hpp"
 
 ZombieMale::ZombieMale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast, mov), mover(mov){
-    src = {79, 599, 142, 239};
+    src = {591, 599, 142, 239};
 }
 
 void ZombieMale::draw(SDL_Rect mover){
