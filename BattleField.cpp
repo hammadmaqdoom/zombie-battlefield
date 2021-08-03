@@ -28,7 +28,7 @@ void BattleField::drawObjects()
     }
 
     for (ZombieMale &z : zMale){
-        z.draw();
+        z.walk();
     }
 
     for (ZombieFemale &z : zFemale){

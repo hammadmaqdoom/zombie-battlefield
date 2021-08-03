@@ -6,6 +6,7 @@
 
 class ZombieMale: public Zombie{
     SDL_Rect src, mover;
+    std::list<SDL_Rect> srcc;
     public:
     
     ZombieMale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
