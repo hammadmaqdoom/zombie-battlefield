@@ -18,11 +18,11 @@ g++ *.cpp -IC:\mingw_dev_lib\include\SDL2 -LC:\mingw_dev_lib\lib -w -lmingw32 -l
 # Credits
 This project was jointly developed by 
 - Muhammad Hammad Maqdoom
-- 
--
--
+- Sadaf Shaikh
+- Ali Taher Peshawarwala
+- Rohit Kumar
 
-You may contact us about any bugs or errors at the following emails mm05534@st.habib.edu.pk , , and .
+You may contact us about any bugs or errors at the following emails mm05534@st.habib.edu.pk , ss06054@st.habib.edu.pk , and .
 
 Happy testing :)
 
