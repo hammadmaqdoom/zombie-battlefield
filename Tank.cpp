@@ -17,6 +17,10 @@ int Tank::returnY()
 {
     return tT.returnY();
 }
+int Tank::returnX()
+{
+    return tT.returnX();
+}
 Tank::Tank(){}
 
 void Tank::fire(bool status){

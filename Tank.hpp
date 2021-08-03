@@ -26,5 +26,6 @@ class Tank{
     void fire(bool status);
     tankTurret returnTankturret();
     int returnY();
+    int returnX();
     
 };

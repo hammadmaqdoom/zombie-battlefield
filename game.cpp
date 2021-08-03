@@ -159,6 +159,9 @@ void Game::run( )
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
 				BattleField.Onefire(xMouse, yMouse);
+				if (xMouse <=120)
+				//how to make sure that the music plays when its 
+				// clicked on a tank
 				Mix_PlayMusic( tankSpawnMusic, 2 );
 			}
 
