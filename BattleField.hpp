@@ -1,5 +1,10 @@
 #pragma once
 #include<SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <stdio.h>
+#include <string>
+#include <sstream>
 #include "Bullet.hpp"
 #include "Tank.hpp"
 #include "Unit.hpp"
@@ -12,7 +17,7 @@
 #include<list>
 using namespace std;
 class BattleField{
-    
+
     list<Bullet> bullets;
     list<Tank> tanks;
     list<ZombieChild> zChild; 
