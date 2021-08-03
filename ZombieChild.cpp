@@ -8,11 +8,11 @@ void ZombieChild::draw(SDL_Rect mover){
 }
 
 void ZombieChild::dead(){
-    src = {442, 977, 230 149} //Die
+    src = {442, 977, 230, 149}; //Die
 }
 
 void ZombieChild::attack(){
-    src = {249, 904, 156, 225} //Attack
+    src = {249, 904, 156, 225}; //Attack
 }
 
 void ZombieChild::walk(){
