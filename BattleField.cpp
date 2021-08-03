@@ -61,8 +61,7 @@ void BattleField::fire()
         int y = tt.returnY();
 
         //creating bullet from end of turret
-        Bullet b1(gRenderer, assets, {x + 120, y+20
-         , 20, 6.25}); //where 120 is the width of turret
+        Bullet b1(gRenderer, assets, {x + 120, y+20, 20, 6}); //where 120 is the width of turret
         bullets.push_back(b1);
 
         t.fire(true);
@@ -91,7 +90,7 @@ void BattleField::Onefire(int x, int y)
     int yc = tt.returnY();
 
     //creating bullet from end of turret
-    Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6.25}); //where 240 is the width of turret
+    Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6}); //where 240 is the width of turret
     bullets.push_back(b1);
     delete tankptr;
 }

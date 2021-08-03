@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include "Zombie.hpp"
-#include<list>
+// #include<list>
 
 class ZombieChild: public Zombie{
     SDL_Rect src, mover;

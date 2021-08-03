@@ -8,7 +8,7 @@ class ZombieFemale: public Zombie{
     public:
 
     ZombieFemale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
-    std::list<ZombieFemale> zombiefemale;
+    // std::list<ZombieFemale> zombiefemale;
     void attack();
     void dead();
     void walk();
