@@ -45,10 +45,10 @@ void BattleField::DisplayTanks()
 
 void BattleField::drawZombies(){
     int x = 900;
-    int y = 37;
+    int y = 57;
     for (int i = 0; i < 6; i++)
     {
-        Zombie zm(gRenderer, assets, {x, y, 120, 46});
+        Zombie zm(gRenderer, assets, {x, y, 60, 24});
         zombies.push_back(zm);
         y += 50 + 46;
     }
