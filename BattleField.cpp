@@ -23,6 +23,10 @@ void BattleField::drawObjects()
     }
     booms.clear();
 
+    for (Zombie &z : zombies){
+        z.draw();
+    }
+
     wiggleAnimation();
 }
 void BattleField::DisplayTanks()
@@ -40,16 +44,14 @@ void BattleField::DisplayTanks()
 }
 
 void BattleField::drawZombies(){
-    // int x = 0;
-    // int y = 37;
-    // for (int i = 0; i < 6; i++)
-    // {
-    //     tankBody tb(gRenderer, assets, {x, y, 120, 46});
-    //     tankTurret tt(gRenderer, assets, {x + 30, y, 120, 46});
-    //     Tank tank(tb, tt);
-    //     tanks.push_back(tank);
-    //     y += 50 + 46;
-    // }
+    int x = 900;
+    int y = 37;
+    for (int i = 0; i < 6; i++)
+    {
+        Zombie zm(gRenderer, assets, {x, y, 120, 46});
+        zombies.push_back(zm);
+        y += 50 + 46;
+    }
 }
 
 void BattleField::createObject(int x, int y)
