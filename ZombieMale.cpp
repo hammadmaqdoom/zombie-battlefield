@@ -1,11 +1,12 @@
 #include "ZombieMale.hpp"
 
-ZombieMale::ZombieMale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast, mov), mover(mov){
+ZombieMale::ZombieMale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast), mover(mov){
     src = {591, 599, 142, 239};
 }
 
-void ZombieMale::draw(SDL_Rect mover){
-    Unit::draw(src, mover);
+void ZombieMale::draw(){
+    Zombie::draw(src, mover);
+    mover.x -= speed;
 }
 
 void ZombieMale::attack(){

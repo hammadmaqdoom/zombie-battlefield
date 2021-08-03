@@ -4,17 +4,17 @@
 #include<list>
 
 class Zombie: public Unit{
-    SDL_Rect src, mover;
+    // SDL_Rect src, mover;
     SDL_Renderer *renderer;
     SDL_Texture *assets;
     
     protected:
     int health;
-    int size;
+    int speed;
     
     public:
-    Zombie(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov);
-    void draw();
+    Zombie(SDL_Renderer* rend, SDL_Texture* ast);
+    void draw(SDL_Rect, SDL_Rect);
     // std::list<Zombie> zombie;
 
 };

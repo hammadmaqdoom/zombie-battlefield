@@ -23,9 +23,18 @@ void BattleField::drawObjects()
     }
     booms.clear();
 
-    for (Zombie &z : zombies){
+    for (ZombieChild &z : zChild){
         z.draw();
     }
+
+    for (ZombieMale &z : zMale){
+        z.draw();
+    }
+
+    for (ZombieFemale &z : zFemale){
+        z.draw();
+    }
+
 
     wiggleAnimation();
 }
@@ -48,8 +57,8 @@ void BattleField::drawZombies(){
     int y = 57;
     for (int i = 0; i < 6; i++)
     {
-        Zombie zm(gRenderer, assets, {x, y, 60, 24});
-        zombies.push_back(zm);
+        ZombieChild zC(gRenderer, assets, {x, y, 60, 24});
+        zChild.push_back(zC);
         y += 50 + 46;
     }
 }
@@ -124,7 +133,10 @@ void BattleField::Onefire(int x, int y)
     }
     //only the tank that the user click on fires bullet
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3f3962b760525007ee066df3d0ea41f63c22d8bb
     delete tankptr;
 }
 

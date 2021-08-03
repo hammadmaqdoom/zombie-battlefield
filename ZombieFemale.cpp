@@ -1,11 +1,12 @@
 #include "ZombieFemale.hpp"
 
-ZombieFemale::ZombieFemale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast, mov), mover(mov) {
+ZombieFemale::ZombieFemale(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast), mover(mov) {
     src = {43, 1178, 183, 242};
 }
 
-void ZombieFemale::draw(SDL_Rect mover){
-    Unit::draw(src, mover);
+void ZombieFemale::draw(){
+    Zombie::draw(src, mover);
+    mover.x -= speed;
 }
 
 void ZombieFemale::attack(){

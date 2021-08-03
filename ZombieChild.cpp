@@ -1,10 +1,11 @@
 #include "ZombieChild.hpp"
 
-ZombieChild::ZombieChild(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast, mov), mover(mov){
+ZombieChild::ZombieChild(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast), mover(mov){
     src = {88, 900, 132, 233}; //Idle
 }
-void ZombieChild::draw(SDL_Rect mover){
-    Unit::draw(src, mover);
+void ZombieChild::draw(){
+    Zombie::draw(src, mover);
+    // mover.x -= speed;
 }
 
 void ZombieChild::dead(){
@@ -15,7 +16,7 @@ void ZombieChild::attack(){
     src = {249, 904, 156, 225}; //Attack
 }
 
-void ZombieChild::walkChild(){
+void ZombieChild::walk(){
     
 }
 
