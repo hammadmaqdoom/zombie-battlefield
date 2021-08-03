@@ -5,12 +5,18 @@
 #include "Unit.hpp"
 #include "Boom.hpp"
 #include "Zombie.hpp"
+#include "ZombieChild.hpp"
+#include "ZombieFemale.hpp"
+#include "ZombieMale.hpp"
+
 #include<list>
 using namespace std;
 class BattleField{
     list<Bullet> bullets;
     list<Tank> tanks;
-    list<Zombie> zombies; 
+    list<ZombieChild> zChild; 
+    list<ZombieMale> zMale;
+    list<ZombieFemale> zFemale;
     list<Boom> booms;
     SDL_Rect movr;
 
