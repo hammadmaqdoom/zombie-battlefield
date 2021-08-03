@@ -1,7 +1,7 @@
 #include "ZombieChild.hpp"
 
 ZombieChild::ZombieChild(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Zombie(rend, ast), mover(mov){
-    src = {88, 900, 132, 233}; //Idle
+    src = {1036, 1952, 145, 248 }; //Idle 
 }
 void ZombieChild::draw(){
     Zombie::draw(src, mover);

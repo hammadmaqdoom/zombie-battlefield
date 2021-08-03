@@ -20,20 +20,20 @@ void ZombieMale::dead(){
 }
 
 void ZombieMale::walk(){
-    srcc.push_back({960, 1586, 125, 257});
-    srcc.push_back({776, 1585, 157, 260}); 
-    srcc.push_back({608, 1585, 159, 258});
-    srcc.push_back({430, 1586, 131, 257});
-    for(SDL_Rect sr: srcc) {
-        Unit::draw(sr, mover);
-        mover.x -= 30; 
-    }
+    // srcc.push_back({960, 1586, 125, 257});
+    // srcc.push_back({776, 1585, 157, 260}); 
+    // srcc.push_back({608, 1585, 159, 258});
+    // srcc.push_back({430, 1586, 131, 257});
+    // for(SDL_Rect sr: srcc) {
+    //     Unit::draw(sr, mover);
+    //     mover.x -= 30; 
+    // }
 }
 
 
-ZombieMale::~ZombieMale(){
+// ZombieMale::~ZombieMale(){
 
-}
+// }
 
 
 
