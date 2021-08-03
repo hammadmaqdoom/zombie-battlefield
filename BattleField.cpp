@@ -28,7 +28,7 @@ void BattleField::drawObjects()
     }
 
     for (ZombieMale &z : zMale){
-        z.walk();
+        z.draw();
     }
 
     for (ZombieFemale &z : zFemale){
@@ -140,5 +140,18 @@ void BattleField::wiggleAnimation()
     for (Tank &t : tanks)
     {
         t.fire(false);
+    }
+}
+
+bool BattleField::collision(){
+    for(ZombieMale &zM: zChild){
+        for (Bullet &b: bullets){
+            if (zM.returnX() == b.returnX() && zM.returnY() == b.returnY()){
+                zC.dead();
+                return true;
+            }
+            else
+            return false;
+        }
     }
 }

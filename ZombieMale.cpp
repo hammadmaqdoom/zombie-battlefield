@@ -30,6 +30,15 @@ void ZombieMale::walk(){
     }
 }
 
+int ZombieMale::returnX()
+{
+    return mover.x;
+}
+int  ZombieMale::returnY()
+{
+    return mover.y;
+}
+
 
 // ZombieMale::~ZombieMale(){
 

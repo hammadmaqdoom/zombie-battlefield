@@ -46,3 +46,13 @@ bool Bullet::isTrue()
     else
         return false;
 }
+
+int Bullet::returnX()
+{
+    return mover.x; 
+}
+
+int Bullet::returnY()
+{
+    return mover.y;
+}

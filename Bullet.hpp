@@ -12,5 +12,7 @@ class Bullet: public Unit{
 
     void draw();
     bool isTrue();
+    int returnX();
+    int returnY();
     
 };

@@ -14,4 +14,6 @@ class ZombieMale: public Zombie{
     void dead();
     void walk();
     void draw();
+    int returnX();
+    int returnY();
 };
