@@ -4,7 +4,7 @@ tankTurret::tankTurret(SDL_Renderer* rend, SDL_Texture* ast, SDL_Rect mov): Unit
     src = {603, 0, 507, 152};
 }
 
-void tankTurret::draw(SDL_Rect mover){
+void tankTurret::draw(){
     Unit::draw(src, mover);
     // mover.x+=2;
 }
@@ -19,6 +19,16 @@ void tankTurret::fire(bool status){
         }
     }
 
+int tankTurret::returnY()
+{
+    return mover.y;
+}
+
+int tankTurret::returnX()
+{
+    return mover.x;
+}
+tankTurret::tankTurret(){}
 // void tankTurret::fire(){
     
 // }

@@ -158,7 +158,7 @@ void Game::run( )
 			//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse,&yMouse);
-				BattleField.createObject(xMouse, yMouse);
+				BattleField.Onefire(xMouse, yMouse);
 				Mix_PlayMusic( tankSpawnMusic, 2 );
 			}
 
@@ -183,7 +183,7 @@ void Game::run( )
 		SDL_RenderClear(gRenderer); //removes everything from renderer
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);//Draws background to renderer
 		//***********************draw the objects here********************
-
+		BattleField.DisplayTanks();
 		BattleField.drawObjects();
 		//****************************************************************
     	SDL_RenderPresent(gRenderer); //displays the updated renderer
