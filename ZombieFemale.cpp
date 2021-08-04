@@ -20,6 +20,15 @@ void ZombieFemale::walk(){
 
 }
 
+int ZombieFemale::returnX()
+{
+    return mover.x;
+}
+int  ZombieFemale::returnY()
+{
+    return mover.y;
+}
+
 
 //Zombie Female
 // src = {43, 1178, 183, 242}; //Idle

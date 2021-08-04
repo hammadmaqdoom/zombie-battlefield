@@ -17,8 +17,16 @@ void ZombieChild::attack(){
 }
 
 void ZombieChild::walk(){
+
     
-    
+}
+int ZombieChild::returnX()
+{
+    return mover.x;
+}
+int  ZombieChild::returnY()
+{
+    return mover.y;
 }
 
 // Zombie Kid

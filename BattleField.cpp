@@ -10,8 +10,22 @@ void BattleField::drawObjects()
 
     for (Bullet &b : bullets)
     {
-        if (b.isTrue() != true) //not hit wall
-            b.draw();
+
+        for (ZombieMale &Z : zMale)
+        {
+            if (b.isTrue(Z) != true)
+            {
+                std::cout <<"No blast, "<< Z.returnX() << ", " << Z.returnY() << std::endl;
+                b.draw();
+                break;
+            }
+            else
+            {
+                std::cout <<"Blast!, "<< Z.returnX() << ", " << Z.returnY() << std::endl;
+                b.Blast();
+                break;
+            }
+        }
     }
 
     for (Tank &t : tanks)
@@ -23,18 +37,20 @@ void BattleField::drawObjects()
     }
     booms.clear();
 
-    for (ZombieChild &z : zChild){
+    for (ZombieChild &z : zChild)
+    {
         z.draw();
     }
 
-    for (ZombieMale &z : zMale){
+    for (ZombieMale &z : zMale)
+    {
         z.draw();
     }
 
-    for (ZombieFemale &z : zFemale){
+    for (ZombieFemale &z : zFemale)
+    {
         z.draw();
     }
-
 
     wiggleAnimation();
 }
@@ -52,15 +68,18 @@ void BattleField::DisplayTanks()
     }
 }
 
-void BattleField::drawZombies(){ //draws zombies on the right most 
+void BattleField::drawZombies()
+{ //draws zombies on the right most
     int x = 1000;
     int y = 37;
     for (int i = 0; i < 6; i++)
     {
         ZombieMale zC(gRenderer, assets, {x, y, 40, 80});
+        zC.UpdateY(&y);
         zMale.push_back(zC);
-        y += 50 + 46;
-
+        y+=50 +46;
+        
+        
     }
 }
 
@@ -86,12 +105,12 @@ void BattleField::fire()
         int y = tt.returnY();
 
         //creating bullet from end of turret
-        Bullet b1(gRenderer, assets, {x + 120, y+20, 20, 6}); //where 120 is the width of turret
+        Bullet b1(gRenderer, assets, {x + 120, y + 23, 20, 6}); //where 120 is the width of turret
         bullets.push_back(b1);
 
         t.fire(true);
 
-        Boom bm1(gRenderer, assets, {x + 120, y + 20, 20, 12});
+        Boom bm1(gRenderer, assets, {x + 120, y + 23, 20, 12});
 
         booms.push_back(bm1);
         std::cout << "Bullet fired from tank at: " << x + 120 << " -- " << y + 20 << std::endl;
@@ -114,7 +133,7 @@ void BattleField::Onefire(int x, int y)
             int xc = tt.returnX();
             int yc = tt.returnY();
 
-            std::cout<<"Turret: "<<xc<<" , "<<yc<<std::endl;
+            std::cout << "Turret: " << xc << " , " << yc << std::endl;
 
             //creating bullet from end of turret
             Bullet b1(gRenderer, assets, {xc + 120, yc + 23, 20, 6}); //where 120 is the width of turret
@@ -143,15 +162,59 @@ void BattleField::wiggleAnimation()
     }
 }
 
-bool BattleField::collision(){
-    for(ZombieMale &zM: zMale){
-        for (Bullet &b: bullets){
-            if (b.returnX()==zM.returnX() &&  (b.returnY()>zM.returnY()&&b.returnY()<zM.returnY()+80)){
-                zM.dead();
+void BattleField::collision(ZombieChild Z)
+{
+    for (Bullet &b : bullets)
+    {
+        for (ZombieChild &Z : zChild) //check if hit zombie
+        {
+            if (b.isTrue(Z) != true)
+                b.draw();
+            else
+                b.Blast();
+        }
+    }
+}
+
+void BattleField::collision(ZombieFemale Z)
+{
+    for (Bullet &b : bullets)
+    {
+        for (ZombieFemale &Z : zFemale) //check if hit zombie
+        {
+            if (b.isTrue(Z) != true)
+                b.draw();
+            else
+                b.Blast();
+        }
+    }
+}
+void BattleField::collision(ZombieMale Z)
+{
+    for (Bullet &b : bullets)
+    {
+        for (ZombieMale &Z : zMale) //check if hit zombie
+        {
+            if (b.isTrue(Z) != true)
+                b.draw();
+            else
+                b.Blast();
+        }
+    }
+}
+
+bool BattleField::GameOverCollision()
+{
+    for (ZombieMale &zM : zMale)
+    {
+        for (Bullet &b : bullets)
+        {
+            if (b.returnX() == zM.returnX() && (b.returnY() > zM.returnY() && b.returnY() < zM.returnY() + 80))
+            {
                 return true;
             }
             else
-            return false;
+                return false;
         }
     }
 }

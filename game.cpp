@@ -177,7 +177,7 @@ void Game::run()
 				// BattleField.wiggleAnimation();
 			}
 		}
-		if (currentTime > lastTime + 5000)
+		if (currentTime > lastTime + 3000)
 		{
 			BattleField.drawZombies();
 			lastTime = currentTime;
@@ -198,16 +198,17 @@ void Game::run()
 		//***********************draw the objects here********************
 		BattleField.DisplayTanks();
 		BattleField.drawObjects();
-		if (BattleField.collision() == true)
+		// BattleField.collision(ZombieMale &Z);
+		// if (BattleField.collision() == true)
 
-		
-		{
-			SDL_Renderer *renderer = SDL_CreateRenderer(gWindow, -1, 0);
-			SDL_Surface *image = SDL_LoadBMP("index.bmp");
-			SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
-			SDL_RenderCopy(renderer, texture, NULL, NULL);
-			SDL_RenderPresent(renderer);
-		}
+
+		// {
+		// 	SDL_Renderer *renderer = SDL_CreateRenderer(gWindow, -1, 0);
+		// 	SDL_Surface *image = SDL_LoadBMP("index.bmp");
+		// 	SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
+		// 	SDL_RenderCopy(renderer, texture, NULL, NULL);
+		// 	SDL_RenderPresent(renderer);
+		// }
 
 		//****************************************************************
 		SDL_RenderPresent(gRenderer); //displays the updated renderer

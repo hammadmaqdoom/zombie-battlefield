@@ -20,6 +20,12 @@ void ZombieMale::dead(){
     health = 0;
 }
 
+int ZombieMale::UpdateY(int &y)
+{
+    mover.y = y;
+    return y;
+}
+
 void ZombieMale::walk(){
     srcc.push_back({960, 1586, 125, 257});
     srcc.push_back({776, 1585, 157, 260}); 

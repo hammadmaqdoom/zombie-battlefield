@@ -38,6 +38,9 @@ class BattleField{
     void Onefire(int, int );
     void DisplayTanks();//displays tanks from the beginning
     void drawZombies();
-    bool collision();
+    void collision(ZombieChild);
+    void collision(ZombieMale);
+    void collision(ZombieFemale);
+    bool GameOverCollision();
     
 };
