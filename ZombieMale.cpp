@@ -20,10 +20,9 @@ void ZombieMale::dead(){
     health = 0;
 }
 
-int ZombieMale::UpdateY(int &y)
+void ZombieMale::UpdateY(int y)
 {
     mover.y = y;
-    return y;
 }
 
 void ZombieMale::walk(){

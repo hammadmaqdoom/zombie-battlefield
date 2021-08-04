@@ -39,9 +39,14 @@ class BattleField{
     void Onefire(int, int );
     void DisplayTanks();//displays tanks from the beginning
     void drawZombies();
-    void collision(ZombieChild);
-    void collision(ZombieMale);
-    void collision(ZombieFemale);
+    // void collision(ZombieChild*);
+    void collision();
+    // void collision(ZombieFemale*);
     bool GameOverCollision();
+    // friend std::ostream& operator<<(std::ostream& ,  ZombieMale* &zM);
+
+    ~BattleField();
     
 };
+
+// std::ostream& operator<<(std::ostream& ,  ZombieMale* &zM );

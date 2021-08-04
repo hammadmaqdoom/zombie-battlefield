@@ -14,12 +14,12 @@ void Bullet::draw()
 
     Unit::draw(src, mover);
 
-    mover.x += 10; //28 appearances
+    mover.x += 50; //28 appearances
 
     std::cout << "Bullet reached, x= " << mover.x << "--" << mover.y << std::endl;
 }
 
-bool Bullet::isTrue(ZombieChild Z)//true if collision happened
+bool Bullet::isTrue(ZombieChild Z) //true if collision happened
 {
     if (mover.x == Z.returnX() && (mover.y > Z.returnY() && mover.y < Z.returnY() + 80))
 
@@ -39,7 +39,10 @@ bool Bullet::isTrue(ZombieFemale Z)
 
 bool Bullet::isTrue(ZombieMale Z)
 {
-    if (mover.x <= Z.returnX() && (mover.y > Z.returnY() && mover.y < Z.returnY() + 80))
+    if (mover.x < Z.returnX() + 40 &&
+        mover.x + 20 > Z.returnX() &&
+        mover.y < Z.returnY() + 80 &&
+        mover.y + 6 > Z.returnY())
         return true;
 
     else

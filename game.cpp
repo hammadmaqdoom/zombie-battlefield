@@ -142,7 +142,7 @@ void Game::run()
 	SDL_Event e;
 	unsigned int lastTime = 0, currentTime;
 
-	BattleField BattleField(gRenderer, assets);
+	BattleField* b1 =new BattleField(gRenderer, assets);
 	while (!quit)
 	{
 		currentTime = SDL_GetTicks();
@@ -162,7 +162,7 @@ void Game::run()
 				//this is a good location to add pigeon in linked list.
 				int xMouse, yMouse;
 				SDL_GetMouseState(&xMouse, &yMouse);
-				BattleField.Onefire(xMouse, yMouse);
+				b1->Onefire(xMouse, yMouse);
 				if (xMouse <= 120)
 					//how to make sure that the music plays when its
 					// clicked on a tank
@@ -171,7 +171,7 @@ void Game::run()
 
 			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_f)
 			{
-				BattleField.fire();
+				b1->fire();
 				Mix_PlayMusic(fireMusic, 2);
 				// SDL_Delay(750);
 				// BattleField.wiggleAnimation();
@@ -179,7 +179,7 @@ void Game::run()
 		}
 		if (currentTime > lastTime + 3000)
 		{
-			BattleField.drawZombies();
+			b1->drawZombies();
 			lastTime = currentTime;
 		}
 		if (Mix_PlayingMusic() == 0)
@@ -196,8 +196,10 @@ void Game::run()
 		SDL_RenderClear(gRenderer);						 //removes everything from renderer
 		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL); //Draws background to renderer
 		//***********************draw the objects here********************
-		BattleField.DisplayTanks();
-		BattleField.drawObjects();
+		b1->DisplayTanks();
+		b1->collision();
+		b1->drawObjects();
+		
 		// BattleField.collision(ZombieMale &Z);
 		// if (BattleField.collision() == true)
 
@@ -215,4 +217,6 @@ void Game::run()
 
 		SDL_Delay(200); //causes sdl engine to delay for specified miliseconds
 	}
+	
+	delete b1;
 }

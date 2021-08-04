@@ -16,5 +16,8 @@ class Zombie: public Unit{
     Zombie(SDL_Renderer* rend, SDL_Texture* ast);
     void draw(SDL_Rect, SDL_Rect);
     // std::list<Zombie> zombie;
+    // virtual int returnX();
+    // virtual int returnY();
+
 
 };
