@@ -17,6 +17,7 @@ src = {247, 605, 157, 233};
 
 void ZombieMale::dead(){
     src = {427, 683, 239, 152}; 
+    health = 0;
 }
 
 void ZombieMale::walk(){

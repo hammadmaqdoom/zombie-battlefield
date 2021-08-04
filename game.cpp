@@ -199,6 +199,8 @@ void Game::run()
 		BattleField.DisplayTanks();
 		BattleField.drawObjects();
 		if (BattleField.collision() == true)
+
+		
 		{
 			SDL_Renderer *renderer = SDL_CreateRenderer(gWindow, -1, 0);
 			SDL_Surface *image = SDL_LoadBMP("index.bmp");

@@ -144,10 +144,10 @@ void BattleField::wiggleAnimation()
 }
 
 bool BattleField::collision(){
-    for(ZombieMale &zM: zChild){
+    for(ZombieMale &zM: zMale){
         for (Bullet &b: bullets){
-            if (zM.returnX() == b.returnX() && zM.returnY() == b.returnY()){
-                zC.dead();
+            if (b.returnX()==zM.returnX() &&  (b.returnY()>zM.returnY()&&b.returnY()<zM.returnY()+80)){
+                zM.dead();
                 return true;
             }
             else
