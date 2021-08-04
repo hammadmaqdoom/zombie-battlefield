@@ -8,24 +8,25 @@ void BattleField::drawObjects()
     // call draw functions of all the objects here
     // Game OOP BattleField
 
-    for (Bullet &b : bullets)
+    for (Bullet* &b : bullets)
     {
 
-        for (ZombieMale &Z : zMale)
+        for (ZombieMale* &Z : zMale)
         {
-            if (b.isTrue(Z) != true)
+            if (b->isTrue(&Z) != true)
             {
                 std::cout <<"No blast, "<< Z.returnX() << ", " << Z.returnY() << std::endl;
-                b.draw();
+                b->draw();
                 break;
             }
             else
             {
                 std::cout <<"Blast!, "<< Z.returnX() << ", " << Z.returnY() << std::endl;
-                b.Blast();
-                break;
+                b->Blast();
+                
             }
         }
+        
     }
 
     for (Tank &t : tanks)
@@ -75,7 +76,7 @@ void BattleField::drawZombies()
     for (int i = 0; i < 6; i++)
     {
         ZombieMale zC(gRenderer, assets, {x, y, 40, 80});
-        zC.UpdateY(&y);
+        zC.UpdateY(y);
         zMale.push_back(zC);
         y+=50 +46;
         

@@ -39,7 +39,7 @@ bool Bullet::isTrue(ZombieFemale Z)
 
 bool Bullet::isTrue(ZombieMale Z)
 {
-    if (mover.x == Z.returnX() && (mover.y > Z.returnY() && mover.y < Z.returnY() + 80))
+    if (mover.x <= Z.returnX() && (mover.y > Z.returnY() && mover.y < Z.returnY() + 80))
         return true;
 
     else

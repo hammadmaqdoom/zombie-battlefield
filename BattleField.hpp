@@ -17,13 +17,14 @@
 #include<list>
 using namespace std;
 class BattleField{
-
-    list<Bullet> bullets;
-    list<Tank> tanks;
-    list<ZombieChild> zChild; 
-    list<ZombieMale> zMale;
-    list<ZombieFemale> zFemale;
-    list<Boom> booms;
+// make manipulation with pointers
+//operator overloading
+    list<Bullet*> bullets;
+    list<Tank*> tanks;
+    list<ZombieChild*> zChild; 
+    list<ZombieMale*> zMale;
+    list<ZombieFemale*> zFemale;
+    list<Boom*> booms;
     SDL_Rect movr;
 
     SDL_Renderer *gRenderer;

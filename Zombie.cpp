@@ -13,3 +13,8 @@ void Zombie::draw(SDL_Rect srcRect, SDL_Rect moverRect){
 }
 
 
+virtual int Zombie::returnX()=0;
+
+virtual int Zombie::returnY()=0;
+
+
